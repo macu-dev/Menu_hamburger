@@ -1,0 +1,68 @@
+*{
+  box-sizing: border-box;
+
+}
+
+body,html{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background: #ee0979;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+}
+
+.hamburger{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  margin-top: 70px;
+  min-width: 250px;
+  
+}
+
+.hamburger-line,.hamburger-line::before, .hamburger-line::after{
+  background-color: #fff;
+  content: '';
+  width: 150px;
+  height: 20px;
+  border-radius: 10px;
+  position: absolute;
+  transition-timing-function: ease;
+  transition-duration: .6s;
+  transition-property: transform,background-color,top;
+  cursor: pointer;
+}
+
+.hamburger-line:before {
+  top: -30px;
+}
+.hamburger-line:after {
+  top: 30px;
+}
+
+.hl-active{
+  background-color: rgba(255,255,255,0);
+}
+
+.hl-active:before {
+  top: 0px !important;
+  transform: rotate(-25deg) !important;
+}
+.hl-active:after {
+  top: 0px !important;
+  transform: rotate(25deg) !important;
+}
+
+
+@media(min-width:2000px){
+  .hamburger{
+    margin-top: 180px;
+  }
+}
